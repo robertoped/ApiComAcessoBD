@@ -1,0 +1,33 @@
+API
+O que seria uma API (Application Programming Interface – Interface de Programação de Aplicação), mas o que é isso?
+Em resumo as APIs são mecanismos facilitadores para a comunicação entre softwares.
+Sendo ainda mais literal estamos falando de cliente/servidor, onde um cliente (celular, computador, tablet) através de Apps ou sites acessarem um determinado servidor para CRIAR, PESQUISAR, ATUALIZAR ou REMOVER determinada informação que foi selecionada.
+
+Vamos dar um exemplo bem simples disso:
+
+Vamos imaginar que você está usando o celular para efetuar uma compra de algo dentro do App das Casas Bahia e uma outra pessoa está fazendo isso só que através do computador utilizando o site. Tanto você como a outra pessoa, gostariam de saber qual será o valor cobrado por eles para transportar o seu produto caso aceitem comprar. Para isso os Correios possuem uma API contendo um método de pesquisa de frente, onde esse método espera receber um CEP e depois devolve o tempo para entregar esse produto e o valor que será cobrado.
+Então não importa o tipo de cliente (App, Site) todos iram acessar de forma padronizada alguma API (servidor) para fazer alguma requisição.
+
+Para facilitar o entendimento vamos usar APIs Rest para isso. REST (Representation State Transfer – Transferência Representacional de Estado) nesse caso é um conjunto de métodos contendo (GET (seria a pesquisa), PUT (seria o atualizar algo), POST (seria a criação de algo), DELETE (remover algo que foi cadastrado) etc.).
+
+E para mostrar isso na prática, irei utilizar o ApiComAcessoBD, simulando uma requisição cliente (Postman) x servidor (localhost HTTPS) simulando o cadastrado de um cliente PF e PJ para depois conseguirem comprar um produto.
+
+Vale reforçar que esse projeto será bem simples e depois poderá ser melhorado utilizando as boas práticas de desenvolvimento de sistemas.
+
+Itens para leitura
+https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations
+
+Esse projeto é uma forma bem simples de entender e mostrar como uma Restful WebApi trabalha, esse exemplo é tão simples que nessa
+primeira versão do projeto estou usando um modelo anêmico e na próxima versão já vou utilizar um modelo mais rico.
+Caso tenha curiosidade ou queira se familiarizar com esse termo busque conteúdos na internet, mas aqui segue um exemplo:
+
+https://www.macoratti.net/20/07/c_amnric1.htm
+
+Projeto
+
+1 - AutoMapper;
+2 - AutoMapper.Extensions.Microsoft.DependencyInjection;
+3 - Microsoft.EntityFrameworkCore;
+4 - Microsoft.EntityFrameworkCore.Relational;
+5 - Pasta ScriptsBD contendo os scripts do Banco de Dados e tabelas;
+6 - Pasta Postman contendo as collections para você testar a Api;

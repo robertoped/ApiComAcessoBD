@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "4ac9015f-d3cf-420e-9f63-52416ba4bd70",
+		"name": "ApiComAcessoBD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28550704"
+	},
+	"item": [
+		{
+			"name": "Operações para Pessoa Física",
+			"item": [
+				{
+					"name": "0-CadastrarPessoaFisica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Aqui estou enviado um objeto Pessoa contendo dentro dele um objeto Pessoa Física com Pessoa Telefone.\r\n{\r\n    \"IdTipoPessoa\" : 1,\r\n    \"Email\" : \"teste@teste.com.br\",\r\n    \"Ativo\" : true,\r\n    \"PessoaFisica\": {\r\n        \"Nome\" : \"Carlos Eduardo Pereira Magalhães\",\r\n        \"CPF\" : \"99999999999\",\r\n        \"IdNivelFormacao\" : 1,\r\n        \"IdEstadoCivil\" : 1,\r\n        \"IdNaturalidade\" : 1,\r\n        \"DataNascimento\" : \"2000-01-01\",\r\n        \"Filiacao1\" : \"Carlos Eduardo Pereira\",\r\n        \"Filiacao2\" : \"Ana Carolina Pereira Magalhães\"\r\n    },\r\n    \"PessoaTelefones\":[\r\n        {\r\n            \"IdTipoTelefone\" : 1,\r\n            \"Numero\" : \"+5511999999999\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 2,\r\n            \"Numero\" : \"+551188888888\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 3,\r\n            \"Numero\" : \"+551177777777\"\r\n        }\r\n    ],\r\n    \"PessoaEnderecos\":[\r\n        {\r\n            \"Cep\" : \"01310932\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"2202\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Principal\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01311903\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"119\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Entrega\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01318000\",\r\n            \"Logradouro\" : \"Avenida Brigadeiro Luís Antônio\",\r\n            \"Numero\" : \"698\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : \"24\",\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Cobranca\" : true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44315/PessoaFisica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaFisica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1-RetornarTodasPessosFisicas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaFisica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaFisica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2-PesquisarPessoaFisicaPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaFisica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaFisica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3-PesquisarPessoaFisicaPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaFisica/PesquisarPorNome?nome=Carlos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaFisica",
+								"PesquisarPorNome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Carlos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4-AtualizarPessoaFisica",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Aqui estou alterando o telefone residencial.\r\n{\r\n    \"IdTipoPessoa\" : 1,\r\n    \"Email\" : \"teste@teste.com.br\",\r\n    \"Ativo\" : true,\r\n    \"PessoaFisica\": {\r\n        \"Nome\" : \"Carlos Eduardo Pereira Magalhães\",\r\n        \"CPF\" : \"99999999999\",\r\n        \"IdNivelFormacao\" : 1,\r\n        \"IdEstadoCivil\" : 1,\r\n        \"IdNaturalidade\" : 1,\r\n        \"DataNascimento\" : \"2000-01-01\",\r\n        \"Filiacao1\" : \"Carlos Eduardo Pereira\",\r\n        \"Filiacao2\" : \"Ana Carolina Pereira Magalhães\"\r\n    },\r\n    \"PessoaTelefones\":[\r\n        {\r\n            \"IdTipoTelefone\" : 1,\r\n            \"Numero\" : \"+5511999999999\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 2,\r\n            \"Numero\" : \"+551188888888\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 3,\r\n            \"Numero\" : \"+551166666666\"\r\n        }\r\n    ],\r\n    \"PessoaEnderecos\":[\r\n        {\r\n            \"Cep\" : \"01310932\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"2202\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Principal\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01311903\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"119\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Entrega\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01318000\",\r\n            \"Logradouro\" : \"Avenida Brigadeiro Luís Antônio\",\r\n            \"Numero\" : \"698\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : \"24\",\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Cobranca\" : true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44315/PessoaFisica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaFisica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operações para Pessoa Jurídica",
+			"item": [
+				{
+					"name": "0-CadastrarPessoaJuridica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Aqui estou enviado um objeto Pessoa contendo dentro dele um objeto Pessoa Física com Pessoa Telefone.\r\n{\r\n    \"IdTipoPessoa\" : 2,\r\n    \"Email\" : \"minhaempresa@minhaempresa.com.br\",\r\n    \"Ativo\" : true,\r\n    \"PessoaJuridica\": {\r\n        \"RazaoSocial\" : \"Empresa de Tecnologia da Informação\",\r\n        \"NomeFantasia\" : \"Minha Empresa de TI\",\r\n        \"Cnpj\" : \"99999999999999\",\r\n        \"InscricaoEstadual\" : \"388.108.598.269\",\r\n        \"InscricaoMunicipal\" : \"450869-9\",\r\n        \"DataFundacao\" : \"1990-01-01\",\r\n        \"IdTipoRegime\" : 1\r\n    },\r\n    \"PessoaTelefones\":[\r\n        {\r\n            \"IdTipoTelefone\" : 2,\r\n            \"Numero\" : \"+551122222222\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 3,\r\n            \"Numero\" : \"+551188888888\"\r\n        }\r\n    ],\r\n    \"PessoaEnderecos\":[\r\n        {\r\n            \"Cep\" : \"01310932\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"2202\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Principal\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01311903\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"119\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Entrega\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01318000\",\r\n            \"Logradouro\" : \"Avenida Brigadeiro Luís Antônio\",\r\n            \"Numero\" : \"698\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : \"24\",\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Cobranca\" : true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44315/PessoaJuridica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaJuridica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1-RetornarTodasPessosFisicas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaJuridica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaJuridica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2-PesquisarPessoaFisicaPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaJuridica/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaJuridica",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3-PesquisarPessoaJuridicaPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44315/PessoaJuridica/PesquisarPorNome?nome=Carlos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaJuridica",
+								"PesquisarPorNome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Carlos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4-AtualizarPessoaJuridica",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Aqui estou enviado um objeto Pessoa contendo dentro dele um objeto Pessoa Juridica com Pessoa Telefone.\r\n{\r\n    \"IdTipoPessoa\" : 2,\r\n    \"Email\" : \"minhaempresa@minhaempresa.com.br\",\r\n    \"Ativo\" : true,\r\n    \"PessoaJuridica\": {\r\n        \"RazaoSocial\" : \"Empresa de Tecnologia da Informação\",\r\n        \"NomeFantasia\" : \"Minha Empresa de TI\",\r\n        \"Cnpj\" : \"99999999999999\",\r\n        \"InscricaoEstadual\" : \"388.108.598.269\",\r\n        \"InscricaoMunicipal\" : \"450869-9\",\r\n        \"DataFundacao\" : \"1990-01-01\",\r\n        \"IdTipoRegime\" : 1\r\n    },\r\n    \"PessoaTelefones\":[\r\n        {\r\n            \"IdTipoTelefone\" : 2,\r\n            \"Numero\" : \"+551122222222\"\r\n        },\r\n        {\r\n            \"IdTipoTelefone\" : 3,\r\n            \"Numero\" : \"+551177777777\"\r\n        }\r\n    ],\r\n    \"PessoaEnderecos\":[\r\n        {\r\n            \"Cep\" : \"01310932\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"2202\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Principal\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01311903\",\r\n            \"Logradouro\" : \"Avenida Paulista\",\r\n            \"Numero\" : \"119\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : 24,\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Entrega\" : true\r\n        },\r\n        {\r\n            \"Cep\" : \"01318000\",\r\n            \"Logradouro\" : \"Avenida Brigadeiro Luís Antônio\",\r\n            \"Numero\" : \"698\",\r\n            \"Complemento\" : \"\",\r\n            \"Bairro\" : \"Bela Vista\",\r\n            \"IdUnidadeFederativa\" : \"24\",\r\n            \"Cidade\" : \"São Paulo\",\r\n            \"Cobranca\" : true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44315/PessoaJuridica/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44315",
+							"path": [
+								"PessoaJuridica",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiComAcessoBD", "ApiComAcessoBD\ApiComAcessoBD.csproj", "{07185842-3560-4CC4-A3B0-0DD3D140E76E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07185842-3560-4CC4-A3B0-0DD3D140E76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07185842-3560-4CC4-A3B0-0DD3D140E76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07185842-3560-4CC4-A3B0-0DD3D140E76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07185842-3560-4CC4-A3B0-0DD3D140E76E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBFBFDC8-BA60-440B-99D3-9BEFA5DC7801}
+	EndGlobalSection
+EndGlobal
